@@ -1,10 +1,10 @@
 <div class='card'>
     <div class='card-header'>
-      {{pageTitle}}
+      {{pageTitle}} <!--interpolation wooo-->
     </div>
     <div class='card-body'>
       <div class='row'>
-        <div class='col-md-2'>{{filterName}}</div>
+        <div class='col-md-2'>{{filterName}}</div> <!--interpolation wooo-->
         <div class='col-md-4'>
           <input type='text'>
                 
@@ -17,7 +17,7 @@
       </div>
     </div>
     <div class='table-responsive'> 
-        <table class='table'>
+        <table class='table' *ngIf='products.length'>
           <thead>
             <tr>
               <th>
@@ -33,7 +33,14 @@
             </tr>
           </thead>
           <tbody>
-           
+           <tr *ngFor='let product of products'>
+            <td></td>
+            <td>{{product.productName}}</td>
+            <td>{{product.productCode}}</td>
+            <td>{{product.productDate}}</td>
+            <td>{{product.price}}</td>
+            <td>{{product.starRating}}</td>
+           </tr>
           </tbody>
         </table>
       </div>
