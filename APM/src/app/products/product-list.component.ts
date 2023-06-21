@@ -13,7 +13,14 @@ export class ProductListComponent implements OnInit {
     imageWidth: number = 50;
     imageMargin: number = 2 ;
     showImage: boolean = false;
-    listFilter: string = 'cart';
+    private _listFilter: string = '';
+    get listFilter(): string{
+      return this._listFilter
+    }
+    set listFilter(value:string){
+      this._listFilter = value;
+      console.log('In setter',value);
+    }
      products: IProduct[] = [  {
         "productId": 2,
         "productName": "Garden Cart",
